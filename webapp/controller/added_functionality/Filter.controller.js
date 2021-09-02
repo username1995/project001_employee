@@ -6,7 +6,22 @@ sap.ui.define([
 	"use strict";
 
 	return Controller.extend("project001employee.controller.added_functionality.Filter", {
-		
+		handleLiveChange : function(oEvent){
+            // build filter array
+            
+                        var aFilter = [];
+                        var sQuery = oEvent.getParameter("query");
+            
+                        if (sQuery) {
+                            aFilter.push(new Filter("Name", FilterOperator.EQ, sQuery));
+                        }
+            
+                        // filter binding
+                        var oList = this.getView().byId("tableId");
+                        var oBinding = oList.getBinding("items");
+                        oBinding.filter(aFilter);
+            
+                  },
         onFilterBooks : function (oEvent) {
 
 			// build filter array
