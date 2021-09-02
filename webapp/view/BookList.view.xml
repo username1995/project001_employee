@@ -1,5 +1,5 @@
 <mvc:View
-        controllerName="project001employee/controller/book/BookList"
+        controllerName="project001employee.controller.book.AddBook"
         xmlns:mvc="sap.ui.core.mvc"
         xmlns:core="sap.ui.core"
         xmlns="sap.m">
