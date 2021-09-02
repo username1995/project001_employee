@@ -11,6 +11,6 @@ sap.ui.define([
 			oModel.setDefaultBindingMode("OneWay");
 			return oModel;
 		}
-
+//czy moglbym tu wlasne modele? sadze ze tak
 	};
 });

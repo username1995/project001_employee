@@ -20,7 +20,7 @@ sap.ui.define([
                 // load asynchronous XML fragment
                 Fragment.load({
                     id: oView.getId(),
-                    name: "project001employee.view.AddDialog",
+                    name: "project001employee.view.fragments.AddDialog",
                     controller: this
                 }).then(function (oDialog) {
                     // connect dialog to the root view of this component (models, lifecycle)
