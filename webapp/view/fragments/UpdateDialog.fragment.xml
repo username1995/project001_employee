@@ -1,5 +1,5 @@
 <core:FragmentDefinition id="idBookUpdateFragment"
-                         controllerName="project001employee.controller.BookList"
+                         controllerName="project001employee/controller/book/EditBook"
                          xmlns="sap.m"
                          xmlns:f="sap.ui.layout.form"
                          xmlns:core="sap.ui.core">
