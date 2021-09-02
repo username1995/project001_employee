@@ -92,13 +92,13 @@ for (var i = 1; i <= 31; i++) {
             this._oValueHelpDialog.getTableAsync().then(function (oTable) {
                 oTable.setModel(this.oProductsModel);
                 oTable.setModel(this.oColModel, "columns");
-
+                this.getView().setModel(this.getOwnerComponent().getModel("tableData"));
                 if (oTable.bindRows) {
-                    oTable.bindAggregation("rows", "/ProductCollection2");
+                    oTable.bindAggregation("rows", "/ProductCollection");
                 }
 
                 if (oTable.bindItems) {
-                    oTable.bindAggregation("items", "/ProductCollection2", function () {
+                    oTable.bindAggregation("items", "/ProductCollection", function () {
                         return new ColumnListItem({
                             cells: aCols.map(function (column) {
                                 return new Label({ text: "{" + column.template + "}" });
@@ -137,76 +137,19 @@ for (var i = 1; i <= 31; i++) {
             var i18nModel = new ResourceModel({
                 bundleName: "org.ubb.books.i18n.i18n"
             });
-        this.oColModel = new sap.ui.model.json.JSONModel(sap.ui.require.toUrl("project001_employee/webapp/localService/mockdata") + "/columnsModel.json");
 
-// this.ODataServiceUrl = "/sap/opu/odata/sap/ZEMPLOYEES_SRV/";
-// this.oDataModel = new sap.ui.model.odata.ODataModel(
-//     this.ODataServiceUrl,true
-// );
-// sap.ui.getCore().setModel(this.oDataModel,"dupa2");
-
-
-
-
-
-
-
-          /*  var oModel = new sap.ui.model.json.JSONModel(
-                {"animals": [
-                  {
-                    "name": "Fox",
-                    "favouriteFood": "chicken",
-                    "color": "red",
-                    "numberOfLegs": "4"
-                  },
-                  {
-                    "name": "Pig",
-                    "favouriteFood": "everything",
-                    "color": "pink",
-                    "numberOfLegs": "4"
-                  },
-                  {
-                    "name": "Cat",
-                    "favouriteFood": "mouse",
-                    "color": "grey",
-                    "numberOfLegs": "4"
-                  },
-                  {
-                    "name": "Snake",
-                    "favouriteFood": "mouse",
-                    "color": "green",
-                    "numberOfLegs": "0"
-                  }
-                ]}
-              );
-              this.getView().setModel(oModel);
-*/
    
             this.getView().setModel(i18nModel, "i18n");
             var oModel = new sap.ui.model.json.JSONModel(oData);
 			this.getView().setModel(oModel,"list");
-    //         var jsonModel = new sap.ui.model.json. JSONModel({
-    //             rows: [{
-    //               name: '00001000'
-    //             }, {
-    //               name: '00002000'
-    //             }]
-    //           });
-
-    //    this.getView().setModel(jsonModel, "list");
+           // var oModel = this.getOwnerComponent().getModel("tableData");
+			
+            var dataModel = this.getOwnerComponent().getModel("tableData");
+			this.getView().setModel(dataModel, "DataModel");
            
-            //     var jsonModel = new sap.ui.model.json. JSONModel({
-            //         rows: [{
-            //           sectionId: '00001000',
-            //           costId: '1L'
-            //         }, {
-            //           sectionId: '00002000',
-            //           costId: '2'
-            //         }]
-            //       });
-
-            // this.getView().setModel(jsonModel, "list");
-            //this.getView().setModel(this.getOwnerComponent().getModel());
+            this.getView().setModel(this.getOwnerComponent().getModel("dupa"));///////////ale to 
+           //potrzebuje zeby named modele dzialaky
+            //nadal masz jeden model
 
         },
         onSearch: function(oEvent) 

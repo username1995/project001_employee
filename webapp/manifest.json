@@ -27,7 +27,13 @@
           "odataVersion": "2.0",
           "localUri": "localService/metadata.xml"
         }
-      }
+      },
+			"tableData_alias": {
+				"uri": "localService/mockdata/columnsModel.json",
+				"type": "JSON"
+			}
+
+
 		}
   },
   "sap.ui": {
@@ -79,6 +85,10 @@
 			},
       "local": {
         "dataSource": "secondService"	
+			},
+			"tableData": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "tableData_alias"
 			}
     },
     "resources": {
