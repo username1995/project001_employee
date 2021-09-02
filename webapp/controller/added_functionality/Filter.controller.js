@@ -5,7 +5,7 @@ sap.ui.define([
 ) {
 	"use strict";
 
-	return Controller.extend("project001employee.controller.Filter", {
+	return Controller.extend("project001employee.controller.added_functionality.Filter", {
 		
         onFilterBooks : function (oEvent) {
 

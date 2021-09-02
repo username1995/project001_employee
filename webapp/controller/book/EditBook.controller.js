@@ -5,7 +5,7 @@ sap.ui.define([
 ) {
 	"use strict";
 
-	return Controller.extend("project001employee.controller.EditBook", {
+	return Controller.extend("project001employee.controller.book.EditBook", {
 
         onUpdate(oEvent) {
             var oBundle = this.getView().getModel("i18n").getResourceBundle();

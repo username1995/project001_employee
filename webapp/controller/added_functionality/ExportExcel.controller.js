@@ -5,7 +5,7 @@ sap.ui.define([
 ) {
 	"use strict";
 
-	return Controller.extend("project001employee.controller.ExportExcel", {
+	return Controller.extend("project001employee.controller.added_functionality.ExportExcel", {
 
 		createColumnConfig: function() {
 			var aCols = [];

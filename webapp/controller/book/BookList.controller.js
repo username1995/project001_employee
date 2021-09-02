@@ -48,7 +48,7 @@ for (var i = 1; i <= 31; i++) {
 
 
 
-    return Controller.extend("project001employee.controller.BookList", {
+    return Controller.extend("project001employee.controller.book.BookList", {
       //  var chuj;
 
 

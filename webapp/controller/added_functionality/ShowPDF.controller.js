@@ -5,7 +5,7 @@ sap.ui.define([
 ) {
 	"use strict";
 
-	return Controller.extend("project001employee.controller.ShowPDF", {
+	return Controller.extend("project001employee.controller.added_functionality.ShowPDF", {
 		     
         showPDF:  function (oEvent){
             var opdfViewer = new PDFViewer();

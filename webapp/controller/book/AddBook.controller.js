@@ -5,7 +5,7 @@ sap.ui.define([
 ) {
 	"use strict";
 
-	return Controller.extend("project001employee.controller.AddBook", {
+	return Controller.extend("project001employee.controller.book.AddBook", {
 
         onAdd() {
             var book = {

@@ -5,7 +5,7 @@ sap.ui.define([
 ) {
 	"use strict";
 
-	return Controller.extend("project001employee.controller.DeleteBook", {
+	return Controller.extend("project001employee.controller.book.DeleteBook", {
 
         onDelete() {
             const selectedRows = this.byId("idBooksTable").getSelectedContexts();

@@ -5,6 +5,6 @@ sap.ui.define([
 ) {
 	"use strict";
 
-	return Controller.extend("project001employee.controller.BookSearchHelp", {
+	return Controller.extend("project001employee.controller.book.BookSearchHelp", {
 	});
 });
