@@ -18,7 +18,7 @@
                 valueHelpRequest=".onValueHelpRequested" 
                 valueHelpOnly="true"
                 suggestionItems="{
-                    path: '/ProductCollection',
+                    path: '/cols',
                     sorter: { path: 'Name' }
                 }"
             >

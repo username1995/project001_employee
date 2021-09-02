@@ -31,7 +31,7 @@ sap.ui.define([
 //http://www.sapspot.com/quick-search-help-for-odata-and-sapui5-application/
 //https://blogs.sap.com/2019/05/02/quick-search-help-for-odata-and-sapui5-application/
 
-var oData = {
+/*var oData = {
     productCollection: []
 };
 
@@ -41,6 +41,7 @@ for (var i = 1; i <= 31; i++) {
 
     });
 }
+*/
 //https://sapui5.hana.ondemand.com/#/entity/sap.ui.comp.valuehelpdialog.ValueHelpDialog
 //https://sapui5.hana.ondemand.com/#/api/sap.ui.comp.valuehelpdialog.ValueHelpDialog%23events/ok
 
@@ -94,11 +95,11 @@ for (var i = 1; i <= 31; i++) {
                 oTable.setModel(this.oColModel, "columns");
                 this.getView().setModel(this.getOwnerComponent().getModel("tableData"));
                 if (oTable.bindRows) {
-                    oTable.bindAggregation("rows", "/ProductCollection");
+                    oTable.bindAggregation("rows", "/cols");
                 }
 
                 if (oTable.bindItems) {
-                    oTable.bindAggregation("items", "/ProductCollection", function () {
+                    oTable.bindAggregation("items", "/cols", function () {
                         return new ColumnListItem({
                             cells: aCols.map(function (column) {
                                 return new Label({ text: "{" + column.template + "}" });
@@ -140,8 +141,8 @@ for (var i = 1; i <= 31; i++) {
 
    
             this.getView().setModel(i18nModel, "i18n");
-            var oModel = new sap.ui.model.json.JSONModel(oData);
-			this.getView().setModel(oModel,"list");
+            //var oModel = new sap.ui.model.json.JSONModel(oData);
+		//	this.getView().setModel(oModel,"list");
            // var oModel = this.getOwnerComponent().getModel("tableData");
 			
             var dataModel = this.getOwnerComponent().getModel("tableData");
@@ -150,7 +151,8 @@ for (var i = 1; i <= 31; i++) {
             this.getView().setModel(this.getOwnerComponent().getModel("dupa"));///////////ale to 
            //potrzebuje zeby named modele dzialaky
             //nadal masz jeden model
-
+           
+            this.oColModel = new sap.ui.model.json.JSONModel(sap.ui.require.toUrl("project001employee/webapp/localService/mockdata") + "/columnsModel.json");
         },
         onSearch: function(oEvent) 
         {
