@@ -1,11 +1,12 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
+	"project001employee/controller/BaseController"
+
 ], function(
-	Controller
+	BaseController
 ) {
 	"use strict";
 
-	return Controller.extend("project001employee.controller.book.EditBook", {
+	return BaseController.extend("project001employee.controller.book.EditBook", {
 
         onUpdate(oEvent) {
             var oBundle = this.getView().getModel("i18n").getResourceBundle();
@@ -25,7 +26,7 @@ sap.ui.define([
                     // load asynchronous XML fragment
                     Fragment.load({
                         id: oView.getId(),
-                        name: "project001employee.view.UpdateDialog",
+                        name: "project001employee.view.fragments.UpdateDialog",
                         controller: this
                     }).then(function (oDialog) {
                         oView.addDependent(oDialog);

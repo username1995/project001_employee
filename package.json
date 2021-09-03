@@ -25,7 +25,7 @@
 		"@ui5/cli": "2.7.1",
 		"@ui5/fs": "2.0.1",
 		"@ui5/logger": "2.0.0"
-		//jak sie nazywala ta biblioteka do podpowiedzi?
+
 	},
 	"ui5": {
 		"dependencies": [

@@ -1,11 +1,13 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
+    "project001employee/controller/BaseController",
+    "sap/m/MessageToast",
+    "sap/ui/core/Fragment",
 ], function(
-	Controller
+	BaseController, MessageToast, Fragment
 ) {
 	"use strict";
 //TO DO:
-	return Controller.extend("project001employee.controller.book.AddBook", {
+	return BaseController.extend("project001employee.controller.book.AddDialog", {
 
         onAdd() {
             var book = {

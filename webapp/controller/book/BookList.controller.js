@@ -1,5 +1,6 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller",
+   // "sap/ui/core/mvc/Controller",
+    "project001employee/controller/BaseController",
     "sap/m/MessageToast",
     "sap/ui/core/Fragment",
     "sap/ui/model/resource/ResourceModel",
@@ -11,18 +12,23 @@ sap.ui.define([
     "sap/ui/model/json/JSONModel",
     'sap/m/ColumnListItem',
 	'sap/m/Label',
-	'sap/m/Token',
-	'sap/ui/core/Fragment'
-], function (Controller,
+	'sap/m/Token'
+
+
+], function (
+	BaseController,
 	MessageToast,
-	Fragment,
-	ResourceModel,
+    Fragment,
 	Filter,
 	FilterOperator,
 	PDFViewer,
 	library,
-	Spreadsheet, 
-    JSONModel,ColumnListItem, Label, Token
+	Spreadsheet,
+	JSONModel,
+	ColumnListItem,
+	Label,
+	Token
+	
      ) {
     "use strict";
     var EdmType = library.EdmType;
@@ -48,32 +54,50 @@ for (var i = 1; i <= 31; i++) {
 
 
 
-    return Controller.extend("project001employee.controller.book.BookList", {
+    return BaseController.extend("project001employee.controller.book.BookList", {
       //  var chuj;
 
 
         onInit : function () {
             
-            var i18nModel = new ResourceModel({
-                bundleName: "org.ubb.books.i18n.i18n"
-            });
+       ////     var i18nModel = new ResourceModel({
+      //          bundleName: "org.ubb.books.i18n.i18n"
+          ////  });
 
-   
-            this.getView().setModel(i18nModel, "i18n");
-            //var oModel = new sap.ui.model.json.JSONModel(oData);
-		//	this.getView().setModel(oModel,"list");
-           // var oModel = this.getOwnerComponent().getModel("tableData");
-			
-            var dataModel = this.getOwnerComponent().getModel("tableData");
-			this.getView().setModel(dataModel, "DataModel");
+         //   this.getView().setModel(i18nModel, "i18n");
+            this.getView().setModel(this.getOwnerComponent().getModel("dupa"));///////////ale to      
+        },
+        onAdd(){
+            var oView = this.getView();
+        
+      //      var myController = sap.ui.controller("project001employee.controller.book.Test");
+       //     myController.processLogic();
+          
+          //  var oController = sap.ui.getCore().byId("idBookAddDialog").getController();
+
+          if (!this.byId("idBookAddDialog")) {
+                // load asynchronous XML fragment
+                Fragment.load({
+                    id: "idBookAddFragment", //oView.getId(),
+                    name: "project001employee.view.fragments.AddDialog",
+                    controller: this
+                }).then(function (oDialog) {
+                    // connect dialog to the root view of this component (models, lifecycle)
+                    oView.addDependent(oDialog);
+                    oDialog.open();
+                });
+            } else {
+                this.byId("idBookAddDialog").open();
+            } 
+
+
+
+
            
-            this.getView().setModel(this.getOwnerComponent().getModel("dupa"));///////////ale to 
-           //potrzebuje zeby named modele dzialaky
-            //nadal masz jeden model
-           
-            this.oColModel = new sap.ui.model.json.JSONModel(sap.ui.require.toUrl("project001employee/webapp/localService/mockdata") + "/columnsModel.json");
-        }
-       
+        },
+       handleSave( oEvent){
+
+       }
   
     });
 });

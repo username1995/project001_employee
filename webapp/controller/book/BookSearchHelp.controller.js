@@ -10,7 +10,7 @@ sap.ui.define([
             var aCols = this.oColModel.getData().cols;
     
             Fragment.load({
-                name: "project001employee.view.NameSearchHelp",
+                name: "project001employee.view.fragments.NameSearchHelp",
                 controller: this
             }).then(function name(oFragment) {
                 this._oValueHelpDialog = oFragment;

@@ -1,5 +1,5 @@
 <mvc:View
-        controllerName="project001employee.controller.BaseController"
+        controllerName="project001employee/controller/book/BookList"
         xmlns:mvc="sap.ui.core.mvc"
         xmlns:core="sap.ui.core"
         xmlns="sap.m">
@@ -22,8 +22,8 @@
            >
         <headerToolbar>
             <Toolbar>
-                <Button icon="sap-icon://add" text="Add new book" press="project001employee.controller.book.AddBook.onAdd"/>
-                <Button icon="sap-icon://edit" text="Update book" press="project001employee.controller.book.EditBook.onUpdate"/>
+                <Button icon="sap-icon://add" text="Add new book" press="onAdd"/>
+                <Button icon="sap-icon://edit" text="Update book" press="project001employee.controller.book.Test.processLogic"/>
                 <ToolbarSpacer/>
                 <SearchField id="searchField" width="50%" search="project001employee.controller.added_functionality.Filter.onFilterBooks"/>
                 <Button icon="sap-icon://excel-attachment" press="project001employee.controller.added_functionality.ExportExcel.onExport"/> 

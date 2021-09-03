@@ -1,9 +1,10 @@
 sap.ui.define([
+   "./BaseController",
    "sap/ui/core/mvc/Controller",
-   "sap/ui/model/resource/ResourceModel"
-], function (Controller, ResourceModel) {
+   "sap/ui/model/resource/ResourceModel",
+], function (BaseController, ResourceModel) {
    "use strict";
-   return Controller.extend("project001employee.controller.App", {
+   return BaseController.extend("project001employee.controller.App", {
       
    });
 });

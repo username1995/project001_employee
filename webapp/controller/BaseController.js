@@ -6,6 +6,47 @@ sap.ui.define([
 	"use strict";
 
 	return Controller.extend("project001employee.controller.BaseController", {
+		getRouter: function() {
+     
+			// ... instead of
+			return UIComponent.getRouterFor(this);
+	   
+		  },
+	   
+		  // just this.getModel() ...
+		  getModel: function(sName) {
+		 
+			// ... instead of
+			return this.getView().getModel(sName);
+	   
+		  },
+	   
+		  // just this.setModel() ...
+		  setModel: function(oModel, sName) {
+	   
+			// ... instead of
+			return this.getView().setModel(oModel, sName);
+	   
+		  },
+	   
+		  // just this.getResoureBundle() ... 
+		  getResourceBundle: function () {
+	   
+			// ... instead of
+			return this.getOwnerComponent().getModel("i18n").getResourceBundle();
+	   
+		  },
+	   
+		  // calculate something
+		  randomCalculations: function(fValue1, fValue2) {
+	   
+			// do some calculations
+	   
+		  }
+	   
+
+
+		
 
 
 	// author's profile photo Former Member
@@ -20,20 +61,20 @@ sap.ui.define([
 //https://learntips.net/sapui5-dialogwith-businesscard-as-xml-fragment-along-with-controller/
 
 //czy to nie jest rodzaj routingu
-toChildA: function () {
+/*toChildA: function () {
 	this.getOwnerComponent().getRouter().navTo("ChildA");
 },
 
 toChildB: function () {
 	this.getOwnerComponent().getRouter().navTo("ChildB");
 },
-
+*/
 //mozesz tylko do widoku zrobic kontroler
 //https://stackoverflow.com/questions/53542457/sapui5-using-the-same-controller-for-two-views
 //https://sapui5.hana.ondemand.com/sdk/#/api/sap.ui.core.EventBus%23overview
 //https://stackoverflow.com/questions/23696692/access-one-controller-inside-another-in-sapui5
 //https://answers.sap.com/questions/11348930/calling-a-method-between-two-controller.html
-onAdd : function () {
+/*onAdd : function () {
 	var oController = sap.ui.getCore().byId("idView1").getController();
 },
 onUpdate : function () {
@@ -50,29 +91,12 @@ onExport : function () {
 },
 showPDF: function () {
 	var oController = sap.ui.getCore().byId("idView1").getController();
-}
+},
+*/
 
 
 
 
-
-
-		getRouter : function () {
-			return UIComponent.getRouterFor(this);
-		},
-
-		onNavBack: function () {
-			var oHistory, sPreviousHash;
-
-			oHistory = History.getInstance();
-			sPreviousHash = oHistory.getPreviousHash();
-
-			if (sPreviousHash !== undefined) {
-				window.history.go(-1);
-			} else {
-				this.getRouter().navTo("appHome", {}, true /*no history*/);
-			}
-		}
 
 	});
 
