@@ -37,6 +37,7 @@ sap.ui.define([
                 this.byId("idBookAddDialog").open();
             }
         },
+        
         handleCancel() {
             this.byId("idBookAddDialog").close();
         },
